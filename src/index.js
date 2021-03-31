@@ -273,7 +273,7 @@ async function main() {
             });
             await Swal.fire({
                 title: "Success",
-                html: `Pokemon who do not start with ${letter.value} have been removed.`,
+                html: `Pokemon with a second letter that is not ${letter.value} have been removed.`,
                 icon: "success",
                 allowOutsideClick: false,
             })
