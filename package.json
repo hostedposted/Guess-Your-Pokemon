@@ -7,7 +7,8 @@
     "build": "webpack --config webpack.config.js",
     "build_random": "webpack --config random_webpack.config.js",
     "build_all": "webpack --config all_webpack.config.js",
-    "setup": "npm i"
+    "setup": "npm install",
+    "start": "http-server"
   },
   "author": "HostedPosted",
   "license": "MIT",
@@ -19,5 +20,8 @@
     "sweetalert2": "^10.16.0",
     "webpack": "^5.31.2",
     "webpack-cli": "^4.5.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
   }
 }
