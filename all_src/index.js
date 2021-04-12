@@ -6,7 +6,7 @@ import json from "./pokemon.json";
 var all_pokemon = [];
 
 json.forEach(element => {
-    all_pokemon.push(element.name)
+    all_pokemon.push(element.name);
 });
 while (true) {
     var res = await Swal.fire({
@@ -14,13 +14,13 @@ while (true) {
         input: "select",
         inputOptions: all_pokemon,
         allowOutsideClick: false
-    })
+    });
 
     if (!res.value) {
-        await Swal.fire("<b>No Pokemon Entered</b>")
-        continue
+        await Swal.fire("<b>No Pokemon Entered</b>");
+        continue;
     }
-    var pokemon = json[res.value]
+    var pokemon = json[res.value];
 
     await Swal.fire({
         title: pokemon.name,
@@ -28,4 +28,4 @@ while (true) {
         allowOutsideClick: false,
     });
 }
-})()
+})();
