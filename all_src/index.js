@@ -24,7 +24,7 @@ while (true) {
 
     await Swal.fire({
         title: pokemon.name,
-        html: `Types: ${pokemon.type.join(", ")}<br>Length: ${pokemon.length}<br><a onclick="window.open('/')" style="color:teal">Homepage</a>`,
+        html: `Types: ${pokemon.type.join(", ")}<br>Length: ${pokemon.length}<br><a target="_blank" href="/">Homepage</a>`,
         allowOutsideClick: false,
     });
 }

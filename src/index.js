@@ -32,7 +32,7 @@ async function main () {
     await Swal.fire({
         title: "How this works.",
         allowOutsideClick: false,
-        html: "This tool allows you to guess a pokemon from some clues. <br/><br/>You can get a random pokemon and needed information by going <a onclick='window.open(\"/random.html\")' style='color:teal'>here.<a/> <br/><br/>Or you can get needed info about a pokemon <a onclick='window.open(\"/all.html\")' style='color:teal'>here.</a>"
+        html: "This tool allows you to guess a pokemon from some clues. <br/><br/>You can get a random pokemon and needed information by going <a target='_blank' href='/random.html'>here.<a/> <br/><br/>Or you can get needed info about a pokemon <a target='_blank' href='/all.html'>here.</a>"
     });
     const pokemon = json.map(element => element.name);
     const options = { 0: "What are the type/s?", 1: "What is the first letter?", 2: "What is the second letter?", 3: "What is the last letter?", 4: "How many letters are in its name?", 5: "See all pokemon left." };
