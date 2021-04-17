@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 module.exports = {
     "env": {
         "browser": true,
@@ -16,6 +17,9 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-var": 2,
+        "prefer-const": 2,
+        "no-constant-condition": 0
     }
 };
