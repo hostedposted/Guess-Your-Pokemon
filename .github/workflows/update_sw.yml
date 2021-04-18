@@ -1,0 +1,30 @@
+name: Update service worker
+
+on: 
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '15'
+    - name: Create local changes
+      run: |
+        node update_sw.js
+    - name: Commit files
+      run: |
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
+        git add sw.js
+        git commit --allow-empty -m "Update SW.js"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

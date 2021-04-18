@@ -343,7 +343,6 @@ async function main () {
     }
     main();
 }
-
 window.main = main;
 
 async function all () {
@@ -373,7 +372,6 @@ async function all () {
     });
     all();
 }
-
 window.all = all;
 
 function random () {
@@ -386,7 +384,6 @@ function random () {
         showConfirmButton: false
     });
 }
-
 window.random = random;
 
 main();
