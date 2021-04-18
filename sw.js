@@ -1,4 +1,4 @@
-const cacheName = "1.0.2";
+const cacheName = "1.0.3";
 
 const trace = (x, y) => {
   return y;
@@ -7,6 +7,7 @@ const trace = (x, y) => {
 const urlsToCache = new Set([
   "/dist/bundle.js",
   "/index.html",
+  "/dist/77336c1d0d2ca23540d403349a5c8823.woff2",
   self.location.href
 ].map(u => new URL(u, self.location.href).href));
 
