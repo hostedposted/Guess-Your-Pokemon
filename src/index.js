@@ -32,7 +32,7 @@ async function main () {
     await Swal.fire({
         title: "How this works.",
         allowOutsideClick: false,
-        html: "This tool allows you to guess a pokemon from some clues. <br/><br/>You can get a random pokemon and needed information by going <a target='_blank' href='/random.html'>here.<a/> <br/><br/>Or you can get needed info about a pokemon <a target='_blank' href='/all.html'>here.</a>"
+        html: "This tool allows you to guess a pokemon from some clues. <br/><br/>You can get a random pokemon and needed information by going <a style='color: teal' onclick='window.random();'>here.<a/> <br/><br/>Or you can get needed info about a pokemon <a style='color: teal' onclick='window.all();'>here.</a>"
     });
     const pokemon = json.map(element => element.name);
     const options = { 0: "What are the type/s?", 1: "What is the first letter?", 2: "What is the second letter?", 3: "What is the last letter?", 4: "How many letters are in its name?", 5: "See all pokemon left." };
@@ -341,5 +341,50 @@ async function main () {
     }
     main();
 }
+
+window.main = main;
+
+async function all () {
+    const all_pokemon = [];
+
+    json.forEach(element => {
+        all_pokemon.push(element.name);
+    });
+
+    const res = await Swal.fire({
+        html: "<b>Pick Your Pokémon!</b>",
+        input: "select",
+        inputOptions: all_pokemon,
+        allowOutsideClick: false
+    });
+
+    if (!res.value) {
+        await Swal.fire("<b>No Pokemon Entered</b>");
+        all();
+    }
+    const pokemon = json[res.value];
+
+    await Swal.fire({
+        title: pokemon.name,
+        html: `Types: ${pokemon.type.join(", ")}<br>Length: ${pokemon.length}<br><a style='color: teal' onclick='window.main();'>Homepage</a>`,
+        allowOutsideClick: false,
+    });
+    all();
+}
+
+window.all = all;
+
+function random () {
+    const pokemon = json[Math.floor(Math.random() * json.length)];
+
+    Swal.fire({
+        title: pokemon.name,
+        html: `Types: ${pokemon.type.join(", ")}<br>Length: ${pokemon.length}<br><a style='color: teal' onclick='window.main();'>Homepage</a>`,
+        allowOutsideClick: false,
+        showConfirmButton: false
+    });
+}
+
+window.random = random;
 
 main();
