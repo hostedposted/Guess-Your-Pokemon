@@ -22,10 +22,12 @@ const LetterInput = Swal.mixin({
 const NumWords = { 1: "first", 2: "second", 3: "third", 4: "fourth", 5: "fifth", 6: "sixth", 7: "seventh", 8: "eighth", 9: "ninth", 10: "tenth", 11: "eleventh", 12: "twelfth" };
 
 function findFirstDifferentCharacter (string1, string2) {
-    if (string1.length !== string2.length) return;
-    for (let index = 0; index < string1.length; index++) {
-        if (string1[index] !== string2[index]) return index;
+    let index;
+    for (index = 0; index < string1.length; index++) {
+        if (string1[index] !== string2[index]) break;
     }
+    if (string1[index] === undefined || string2[index] === undefined) return;
+    return index;
 }
 
 async function main () {
