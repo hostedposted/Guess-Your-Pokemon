@@ -1,7 +1,9 @@
 name: Update service worker
 
 on: 
-  push
+  push:
+    paths:
+      - "./src/*"
 
 jobs:
   update:

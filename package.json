@@ -1,6 +1,6 @@
 {
   "name": "guess-your-pokemon",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "Guess your pokemon!",
   "main": "dist/bundle.js",
   "scripts": {
