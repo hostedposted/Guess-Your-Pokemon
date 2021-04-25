@@ -1,4 +1,4 @@
-const cacheName = "1.0.7";
+const cacheName = "1.0.8";
 
 const trace = (x, y) => {
   return y;
