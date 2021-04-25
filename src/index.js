@@ -42,40 +42,7 @@ async function main () {
         if (pokemon.length === 2) {
             const index = findFirstDifferentCharacter(pokemon[0], pokemon[1]);
             if (index) {
-                let letter = await LetterInput.fire({
-                    html: `What is the ${NumWords[index + 1]} letter in your pokemon's name?`,
-                    icon: "question",
-                    allowOutsideClick: false
-                });
-                if (!letter.value) {
-                    await Swal.fire({
-                        html: "Invalid input.",
-                        icon: "error",
-                        allowOutsideClick: false
-                    });
-                    continue;
-                }
-                letter = letter.value;
-                if (pokemon[0][index] === letter) {
-                    await Swal.fire({
-                        title: "Pokémon",
-                        html: `The Pokemon Is <b>${pokemon[0]}.</b>`,
-                        allowOutsideClick: false
-                    });
-                } else if (pokemon[1][index] === letter) {
-                    await Swal.fire({
-                        title: "Pokémon",
-                        html: `The Pokemon Is <b>${pokemon[1]}.</b>`,
-                        allowOutsideClick: false
-                    });
-                } else {
-                    await Swal.fire({
-                        title: "Pokémon",
-                        html: "Pokemon could not be found.",
-                        allowOutsideClick: false
-                    });
-                }
-                break;
+                options[10] = `What is the ${NumWords[index + 1]} letter?`;
             }
         }
         if (pokemon.length === 1) {
@@ -339,6 +306,33 @@ async function main () {
                 html: pokemon.join(", "),
                 allowOutsideClick: false
             });
+        } else if (parseInt(picked.value) === 10) {
+            const index = findFirstDifferentCharacter(...pokemon);
+            const letter = await LetterInput.fire({
+                html: `What is the ${NumWords[index + 1]} letter in your pokemon's name?`,
+                icon: "question",
+                allowOutsideClick: false
+            });
+            if (pokemon[0][index] === letter.value) {
+                await Swal.fire({
+                    title: "Pokémon",
+                    html: `The Pokemon Is <b>${pokemon[0]}.</b>`,
+                    allowOutsideClick: false
+                });
+            } else if (pokemon[1][index] === letter.value) {
+                await Swal.fire({
+                    title: "Pokémon",
+                    html: `The Pokemon Is <b>${pokemon[1]}.</b>`,
+                    allowOutsideClick: false
+                });
+            } else {
+                await Swal.fire({
+                    title: "Pokémon",
+                    html: "Pokemon could not be found.",
+                    allowOutsideClick: false
+                });
+            }
+            break;
         }
     }
     main();
