@@ -1,9 +1,10 @@
 name: Update service worker
 
-on: 
+on:
   push:
     paths:
-      - "./src/*"
+      - "src/*"
+  repository_dispatch:
 
 jobs:
   update:
