@@ -22,7 +22,7 @@
     "webpack-cli": "^4.5.0"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
+    "eslint": "^7.26.0",
     "live-server": "^1.2.1"
   }
 }
