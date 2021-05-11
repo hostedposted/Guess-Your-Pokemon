@@ -14,7 +14,7 @@
     "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
     "sass": "^1.32.12",
-    "sass-loader": "^11.0.1",
+    "sass-loader": "^11.1.0",
     "style-loader": "^2.0.0",
     "sweetalert2": "^10.16.7",
     "url-loader": "^4.1.1",
