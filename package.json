@@ -19,7 +19,7 @@
     "sweetalert2": "^10.16.7",
     "url-loader": "^4.1.1",
     "webpack": "^5.36.2",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.7.0"
   },
   "devDependencies": {
     "eslint": "^7.26.0",
