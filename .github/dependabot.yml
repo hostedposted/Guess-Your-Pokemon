@@ -7,5 +7,3 @@ updates:
   allow:
   - dependency-type: 'direct'
   open-pull-requests-limit: 99
-  labels:
-    - "automerge"
