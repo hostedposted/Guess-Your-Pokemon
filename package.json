@@ -16,7 +16,7 @@
     "sass": "^1.34.0",
     "sass-loader": "^11.1.1",
     "style-loader": "^2.0.0",
-    "sweetalert2": "^11.0.11",
+    "sweetalert2": "^11.0.12",
     "url-loader": "^4.1.1",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
